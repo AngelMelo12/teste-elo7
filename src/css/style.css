@@ -4,6 +4,15 @@
     border: 0;
 }
 
+:root {
+    --yellow-elo: #fdb933;
+    --white: white;
+    --primary-gray:#7d7873;
+    --secondary-grey: #726e6a;
+    --grey-background: rgb(240, 240, 240);
+    --green-elo: #359c9c; 
+}
+
 body, html, main {
     width: 100%;
     display: flex;
@@ -27,44 +36,49 @@ body, html, main {
 }
 
 .title {
-    color: white;
+    color: var(--white);
     text-align: center;
     font-size: 1.6rem;
     position: absolute;
     top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+}
 
 .about-elo {
     padding: 15px;
     margin: 10px;
-    color: #7d7873;
+    color: var(--primary-gray);
     font-size: 0.89rem;
     letter-spacing: 0.1rem ;
     line-height: 18px;
   }
 
+.line {
+    color: var(--secondary-grey);
+    font-weight: bold;
+}
+
 .vacancy {
     padding: 20px;
     margin-bottom: 20px;
     text-align: center;
-  }
+    font-weight: bold;
+}
 
 a {
     text-decoration: none;
-    color: #359c9c;
+    color: var(--green-elo);
     font-size: 1rem;
     font-weight: bold;
 } 
 
 .ceo, .about-team {
-    background-color: rgb(240, 240, 240);
+    background-color: var(--grey-background);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
 }
 
 .ceo-image {
@@ -73,19 +87,20 @@ a {
 
 .ceo-word {
     padding: 15px;
-    color: #726e6a;
+    color: var(--secondary-grey);
     font-size: 1.2rem;
     font-weight: bold
 }
 
 .name-ceo {
-    color: #fdb933;
+    color: var(--yellow-elo);
     font-style: italic;
+    font-weight: bold;
 }
 
 .ceo-work {
     padding: 20px;
-    color: #726e6a;
+    color: var(--secondary-grey);
     font-size: 0.89rem;
     letter-spacing: 0.1rem;
     line-height: 18px;
@@ -97,7 +112,7 @@ a {
 }
 
 .team, .open-vacancy {
-    color: #726e6a;
+    color: var(--secondary-grey);
     font-size: 1.1rem;
     font-weight: bold;
     padding: 20px;
@@ -109,20 +124,20 @@ a {
     padding: 30px;
 }
 
-.quality, .environment, .activities {
+.info-img {
     width: 32%;
     padding: 15px;
 }
 
-.title-quality, .title-environment, .title-activities {
-    color: #726e6a;
+.info-title {
+    color: var(--secondary-grey);
     font-size: 1.05rem;
     font-weight: bold;
     margin: 15px;
 }
 
-.about-quality, .about-environment, .about-activities {
-    color: #726e6a;
+.info-about {
+    color: var(--secondary-grey);
     font-size: 0.89rem;
     letter-spacing: 0.1rem;
     line-height: 18px;
@@ -140,3 +155,62 @@ a {
     width: 90%; 
 }
 
+@media screen and (min-width: 768px) {
+    .title {
+        font-size: 4rem;
+        top: 67%;
+        left: 50%;
+        position: absolute;
+    }
+
+    .about-elo {
+        font-size: 1.2rem;
+        letter-spacing: 0.1rem ;
+        line-height: 25px;
+    }
+
+    a {
+        font-size: 1.3rem;
+    }
+
+    .ceo, .about-team {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        width: 100%;
+    }
+
+    .ceo-image {
+        width: 50%;
+        margin-left: 20px;
+        padding: 40px;
+    }
+
+   .ceo-description {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        text-align: left;
+        width: 50%;
+   }
+
+   .ceo-word, .name-ceo, .ceo-work {
+        padding: 10px 0;
+    }
+
+  .name-ceo {
+        font-size: 1.4rem;
+        font-weight: 200;
+  }
+
+  .ceo-work {
+        font-size: 1.1rem;
+        letter-spacing: 0.1rem ;
+        line-height: 25px;
+        padding-top: 40px;
+  }
+   
+
+
+
+    
+}
