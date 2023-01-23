@@ -43,8 +43,10 @@ async function generateVacancyDetailsTemplate(vacancies, vacancyName) {
         return vacancySection;
     }
 
-    let link = document.createElement('p');
-    link.innerText = `${vacancyDetail.link}`;
+    let link = document.createElement('a');
+    link.classList.add('vacancy-link');
+    link.href = `${vacancyDetail.link}`;
+    link.innerText = 'Link da vaga';
 
     let location = generateVacancyLocationTemplate(vacancyDetail.localizacao);
 
