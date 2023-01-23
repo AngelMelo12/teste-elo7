@@ -21,6 +21,7 @@ git clone git@github.com:AngelMelo12/teste-elo7.git
 
 ```bash
 npm install
+```
 
 - Para executar o projeto utilize o comando a seguir no Git bash:
 
