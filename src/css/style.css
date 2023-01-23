@@ -187,13 +187,17 @@ h3 {
     font-size: 1rem;
     line-height: 25px;
     margin: 30px;
+    cursor: pointer;
 }
 
 #vacancy-detail {
     color: var(--secondary-grey);
     font-size: 1rem;
     margin: 30px;
+}
 
+.vacancy-link {
+    font-size: 1rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -348,5 +352,7 @@ h3 {
         margin: 40px;
      }
 
-
+     .vacancy-link {
+        font-size: 1.1rem;
+     }
 }
