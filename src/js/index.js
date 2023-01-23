@@ -1,5 +1,5 @@
 async function getVacancies () {
-    const vacancies = await fetch('http://www.mocky.io/v2/5d6fb6b1310000f89166087b')
+    const vacancies = await fetch('https://www.mocky.io/v2/5d6fb6b1310000f89166087b')
         .then((response) => response.json())
         .catch(async (err) => {
             const vacanciesJson = await fetch('../data/vacancy.json').then((response) => response.json());
