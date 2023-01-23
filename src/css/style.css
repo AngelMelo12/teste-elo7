@@ -29,19 +29,25 @@ body, html, main {
     width: 100%;
 } 
 
+.container-banner {
+    position: relative;
+
+}
+
 .team-elo {
     width: 100%;
-    height: 30%;
-    position: relative;
+    max-height: 70vh;
     text-align: center;
 }
 
 .title {
+    width: 100%;
     color: var(--white);
     text-align: center;
+    text-shadow: 1px 1px 1px black;
     font-size: 1.6rem;
     position: absolute;
-    top: 15%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -158,11 +164,13 @@ a {
  }
 
 .banner-elo {
-    width: 95%; 
+    width: 90%; 
+    height: 20vh;
 }
 
 .development {
     width: 100%;
+    text-align: start;
 }
 
 .development-vacancy {
@@ -174,7 +182,26 @@ a {
     justify-content: flex-start;
 }
 
+h3 {
+    color: var(--green-elo);
+    font-size: 1rem;
+    line-height: 25px;
+    margin: 30px;
+}
+
+#vacancy-detail {
+    color: var(--secondary-grey);
+    font-size: 1rem;
+    margin: 30px;
+
+}
+
 @media screen and (min-width: 768px) {
+
+    .team-elo {
+        max-height: 75vh;
+    }
+    
     .title {
         font-size: 4rem;
         top: 67%;
@@ -261,7 +288,6 @@ a {
         padding: 0;
         margin-top: 45px;
         align-items: flex-start;
-        
     }
 
     .info {
@@ -302,9 +328,24 @@ a {
         width: 100%;
      }
 
+     .banner-elo { 
+        height: 50vh;
+        width: 95%;
+    }
+
      .development-vacancy {
         font-size: 1.2rem ;
-        margin: 15px 15px 30px 30px;
+        margin: 15px 15px 30px 40px;
+     }
+
+     h3 {
+        font-size: 1.2rem;
+        margin: 40px;
+     }
+
+     #vacancy-detail {
+        font-size: 1.1rem;
+        margin: 40px;
      }
 
 
