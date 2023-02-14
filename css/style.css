@@ -61,9 +61,11 @@ body, html, main {
     line-height: 18px;
   }
 
-.line, .line2 {
-    color: var(--grey-line) ;
-    font-weight: bold;
+.cta {
+    border-top: 2px solid var(--grey-line);
+    margin-bottom: 30px;
+    padding: 20px;
+    display: inline-block;
 }
 
 .vacancy {
@@ -154,13 +156,6 @@ a {
     letter-spacing: 0.1rem;
     line-height: 18px;
     padding: 10px;
- }
-
-.more-elo {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 30px;
-    padding: 20px;
  }
 
 .banner-elo {

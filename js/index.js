@@ -1,59 +1,59 @@
-async function getVacancies () {
-    const vacancies = await fetch('https://www.mocky.io/v2/5d6fb6b1310000f89166087b')
-        .then((response) => response.json())
-        .catch(async (err) => {
-            const vacanciesJson = await fetch('../data/vacancy.json').then((response) => response.json());
-            return vacanciesJson;
+async function getVacancies () { 
+    const vacancies = await fetch('https://www.mocky.io/v2/5d6fb6b1310000f89166087b') 
+        .then((response) => response.json()) 
+        .catch(async (err) => { 
+            const vacanciesJson = await fetch('../data/vacancy.json').then((response) => response.json()); 
+            return vacanciesJson; 
         });
 
-    return vacancies;
+    return vacancies; 
 }
 
 function generateVacanciesTemplate(vacancies) {
-    let ul = document.createElement('ul');
-    ul.classList.add('dev-vacancy');
+    let ul = document.createElement('ul'); 
+    ul.classList.add('dev-vacancy'); 
 
-    vacancies.map(vacancy => {
-        if (vacancy.ativa == true) {
+
+    vacancies.forEach(vacancy => { 
+        if (vacancy.ativa == true) { 
             let li = document.createElement('li');
             li.id = 'vacancy';
 
-            let vacancyPosition = document.createElement('h3');
-            vacancyPosition.innerText = `${vacancy.cargo}`;
+            let vacancyPosition = document.createElement('h3'); 
+            vacancyPosition.innerText = `${vacancy.cargo}`; 
 
-            li.appendChild(vacancyPosition);
-            ul.appendChild(li);
+            li.appendChild(vacancyPosition); 
+            ul.appendChild(li); 
         }
     });
 
-    return ul;
+    return ul; 
 };
 
-async function generateVacancyDetailsTemplate(vacancies, vacancyName) {
+async function generateVacancyDetailsTemplate(vacancies, vacancyName) { 
 
-    let vacancySection = document.createElement('section');
+    let vacancySection = document.createElement('section'); 
     vacancySection.id = 'vacancy-detail';
-
-    vacancyName = vacancyName.trim().toLowerCase();
+    vacancyName = vacancyName.trim().toLowerCase(); 
     const vacancyDetail = vacancies.filter(vacancy => vacancy.ativa == true)
-        .find(vacancy => vacancy.cargo.trim().toLowerCase().includes(vacancyName));
+        .find(vacancy => vacancy.cargo.trim().toLowerCase() == vacancyName);
 
     if (vacancyDetail == null || vacancyDetail == undefined) {
-        vacancySection.insertAdjacentText("Não há detalhes para a vaga");
+        vacancySection.insertAdjacentText("Não há detalhes para a vaga"); 
         return vacancySection;
     }
 
-    let link = document.createElement('a');
+    let link = document.createElement('a'); 
     link.classList.add('vacancy-link');
     link.href = `${vacancyDetail.link}`;
-    link.innerText = 'Link da vaga';
+    link.innerText = 'Link da vaga'; 
 
-    let location = generateVacancyLocationTemplate(vacancyDetail.localizacao);
+    let location = generateVacancyLocationTemplate(vacancyDetail.localizacao); 
 
-    vacancySection.appendChild(link);
-    vacancySection.appendChild(location);
+    vacancySection.appendChild(link); 
+    vacancySection.appendChild(location); 
 
-    return vacancySection;
+    return vacancySection; 
 }
 
 function generateVacancyLocationTemplate(vacancyLocation) {
@@ -82,6 +82,8 @@ function generateVacancyLocationTemplate(vacancyLocation) {
     return locationSection;
 }
 
+
+//aqui é onde são carregadas todas as funções que foram escritas acima.
 async function loadVacancies() {
 
     const vacancies = await getVacancies();
@@ -115,5 +117,5 @@ async function loadVacancies() {
 }
 
 window.addEventListener('load', function() {
-    loadVacancies();
+    loadVacancies(); 
 });
